@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
  * Created by Administrator on 2016/1/15 0015.
  */
 @Component
-@ComponentScan({"com.zhw.ms.common"})
-public class CommonConfig {
+@MapperScan(basePackages = {"com.zhw.ms.demo.persistence"})
+public class MybatisConfig {
 }
