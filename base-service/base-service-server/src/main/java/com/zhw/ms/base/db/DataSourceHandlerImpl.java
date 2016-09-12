@@ -1,12 +1,10 @@
-package com.zhw.ms.common.db;
+package com.zhw.ms.base.db;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.core.Ordered;
-import org.springframework.stereotype.Component;
 
 /**
  * 数据源切换AOP

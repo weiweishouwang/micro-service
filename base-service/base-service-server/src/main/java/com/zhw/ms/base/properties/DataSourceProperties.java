@@ -1,4 +1,4 @@
-package com.zhw.ms.common.properties;
+package com.zhw.ms.base.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

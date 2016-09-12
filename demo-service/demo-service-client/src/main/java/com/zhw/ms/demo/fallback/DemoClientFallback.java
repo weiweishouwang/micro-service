@@ -1,6 +1,6 @@
 package com.zhw.ms.demo.fallback;
 
-import com.zhw.ms.common.bean.Result;
+import com.zhw.ms.commons.bean.Result;
 import com.zhw.ms.demo.client.DemoClient;
 import org.springframework.web.bind.annotation.RequestParam;
 

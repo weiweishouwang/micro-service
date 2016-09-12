@@ -24,9 +24,10 @@
     <modules>
         <module>eureka-service</module>
         <module>sba-service</module>
-        <module>common-service</module>
         <module>demo-service</module>
         <module>zuul-service</module>
+        <module>commons</module>
+        <module>base-service</module>
     </modules>
 
     <build>

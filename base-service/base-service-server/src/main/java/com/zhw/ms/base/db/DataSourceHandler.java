@@ -1,7 +1,7 @@
-package com.zhw.ms.common.db;
+package com.zhw.ms.base.db;
 
-import com.zhw.ms.common.bean.ResultEnum;
-import com.zhw.ms.common.exception.JccException;
+import com.zhw.ms.commons.bean.ResultEnum;
+import com.zhw.ms.commons.exception.JccException;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 

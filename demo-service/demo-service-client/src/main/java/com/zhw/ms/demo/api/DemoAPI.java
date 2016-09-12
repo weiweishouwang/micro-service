@@ -1,7 +1,6 @@
 package com.zhw.ms.demo.api;
 
-import com.zhw.ms.common.bean.Result;
-import com.zhw.ms.common.bean.ResultEnum;
+import com.zhw.ms.commons.bean.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;

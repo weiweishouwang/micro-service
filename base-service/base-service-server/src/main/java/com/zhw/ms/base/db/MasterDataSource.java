@@ -1,4 +1,4 @@
-package com.zhw.ms.common.db;
+package com.zhw.ms.base.db;
 
 import org.springframework.transaction.annotation.Transactional;
 

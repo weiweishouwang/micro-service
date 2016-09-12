@@ -1,13 +1,12 @@
-package com.zhw.ms.common.config;
+package com.zhw.ms.base.config;
 
-import com.zhw.ms.common.db.DataSourceHandler;
-import com.zhw.ms.common.db.DynamicDataSource;
-import com.zhw.ms.common.properties.DataSourceProperties;
+import com.zhw.ms.base.db.DataSourceHandler;
+import com.zhw.ms.base.db.DynamicDataSource;
+import com.zhw.ms.base.properties.DataSourceProperties;
 import org.apache.tomcat.jdbc.pool.PoolProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
