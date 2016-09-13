@@ -1,6 +1,6 @@
 package com.zhw.ms.demo.service;
 
-import com.zhw.ms.common.db.SlaverDataSource;
+import com.zhw.ms.base.db.SlaverDataSource;
 import com.zhw.ms.demo.entity.Admin;
 import com.zhw.ms.demo.persistence.AdminMapper;
 import org.apache.commons.lang3.StringUtils;

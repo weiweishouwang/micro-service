@@ -1,7 +1,7 @@
 package com.zhw.ms.demo.rest;
 
-import com.zhw.ms.common.bean.Result;
-import com.zhw.ms.common.bean.ResultEnum;
+import com.zhw.ms.commons.bean.Result;
+import com.zhw.ms.commons.bean.ResultEnum;
 import com.zhw.ms.demo.api.DemoAPI;
 import com.zhw.ms.demo.service.DemoService;
 import org.slf4j.Logger;

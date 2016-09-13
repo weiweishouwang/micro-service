@@ -1,6 +1,6 @@
 package com.zhw.ms.demo.db;
 
-import com.zhw.ms.common.db.DataSourceHandler;
+import com.zhw.ms.base.db.DataSourceHandler;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
