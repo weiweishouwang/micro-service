@@ -15,17 +15,8 @@
     <dependencies>
         <dependency>
             <groupId>com.zhw.ms</groupId>
-            <artifactId>middleware</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zhw.ms</groupId>
             <artifactId>base-service-server</artifactId>
             <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
         <dependency>
             <groupId>com.zhw.ms</groupId>
