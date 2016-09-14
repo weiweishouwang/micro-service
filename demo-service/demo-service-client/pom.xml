@@ -15,11 +15,6 @@
 <dependencies>
     <dependency>
         <groupId>com.zhw.ms</groupId>
-        <artifactId>commons</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-        <groupId>com.zhw.ms</groupId>
         <artifactId>base-service-client</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </dependency>
