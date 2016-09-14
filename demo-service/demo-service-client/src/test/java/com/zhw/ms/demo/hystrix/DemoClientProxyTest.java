@@ -1,5 +1,6 @@
-package com.zhw.ms.demo.client;
+package com.zhw.ms.demo.hystrix;
 
+import com.zhw.ms.demo.client.DemoClient;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,12 +13,12 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DemoClientTest {
+public class DemoClientProxyTest {
     @Autowired
-    private DemoClient demoClient;
+    private DemoClientProxy demoClientProxy;
 
     @Test
     public void test01() {
-        Assert.assertTrue(demoClient.getAdmin(1).isSuccess());
+        Assert.assertTrue(demoClientProxy.getAdmin(1).isSuccess());
     }
 }
