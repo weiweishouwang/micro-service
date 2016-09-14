@@ -1,5 +1,7 @@
 package com.zhw.ms.commons;
 
+import com.zhw.ms.commons.spring.SpringUtil;
+import com.zhw.ms.commons.utils.DateUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -19,7 +21,7 @@ public class BasicTest {
 
     @Test
     public void test01() throws InterruptedException {
-
+        System.out.println(DateUtil.format(new Date(), DateUtil.YYYYMMDDHHMMSSMS));
     }
 
 }
