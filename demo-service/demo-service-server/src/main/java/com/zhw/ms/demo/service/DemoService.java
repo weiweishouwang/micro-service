@@ -1,8 +1,8 @@
 package com.zhw.ms.demo.service;
 
-import com.zhw.ms.base.db.SlaverDataSource;
 import com.zhw.ms.demo.entity.Admin;
 import com.zhw.ms.demo.persistence.AdminMapper;
+import com.zhw.ms.middleware.db.SlaverDataSource;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

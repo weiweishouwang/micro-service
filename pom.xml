@@ -28,6 +28,7 @@
         <module>zuul-service</module>
         <module>commons</module>
         <module>base-service</module>
+        <module>middleware</module>
     </modules>
 
     <build>
