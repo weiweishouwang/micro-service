@@ -15,6 +15,7 @@
     <modules>
         <module>demo-service-client</module>
         <module>demo-service-server</module>
+        <module>demo-service-api</module>
     </modules>
 
 
