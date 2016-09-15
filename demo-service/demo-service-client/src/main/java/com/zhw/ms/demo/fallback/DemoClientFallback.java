@@ -1,7 +1,10 @@
 package com.zhw.ms.demo.fallback;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.zhw.ms.commons.bean.Result;
 import com.zhw.ms.demo.client.DemoClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -10,8 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Component
 public class DemoClientFallback implements DemoClient {
+    private static final Logger logger = LoggerFactory
+            .getLogger(DemoClientFallback.class);
+
     @Override
-    public Result<Object> getAdmin(@RequestParam("id") Integer id) {
+    public Result<Object> getAdmin(Integer id) {
         return null;
     }
+
 }

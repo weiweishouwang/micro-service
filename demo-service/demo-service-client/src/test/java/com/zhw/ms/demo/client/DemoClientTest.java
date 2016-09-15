@@ -15,8 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
  * Created by hongweizou on 16/9/12.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = {DemoClientApplication.class}
-    , webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class DemoClientTest {
     @Autowired
     private DemoClient demoClient;

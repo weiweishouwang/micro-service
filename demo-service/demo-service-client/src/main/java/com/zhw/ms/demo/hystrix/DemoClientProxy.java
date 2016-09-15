@@ -25,12 +25,12 @@ public class DemoClientProxy implements DemoAPI {
 
     @Override
     @HystrixCommand(fallbackMethod = "getAdminFallback")
-    public Result<Object> getAdmin(@RequestParam("id") Integer id) {
+    public Result<Object> getAdmin(Integer id) {
         return demoClient.getAdmin(id);
     }
 
-    public Result<Object> getAdminFallback(@RequestParam("id") Integer id, Throwable t) {
+    public Result<Object> getAdminFallback(Integer id, Throwable t) {
         logger.error(t.getMessage(), t);
-        return demoClient.getAdmin(id);
+        return null;
     }
 }
