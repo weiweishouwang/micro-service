@@ -15,8 +15,8 @@ import java.util.Date;
 /**
  * Created by Administrator on 2015/12/31 0031.
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class BasicTest {
 
     @Test
