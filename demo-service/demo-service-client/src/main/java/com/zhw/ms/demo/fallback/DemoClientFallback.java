@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * Created by hongweizou on 16/9/12.
  */
-@Component
+//@Component
 public class DemoClientFallback implements DemoClient {
     private static final Logger logger = LoggerFactory
             .getLogger(DemoClientFallback.class);
