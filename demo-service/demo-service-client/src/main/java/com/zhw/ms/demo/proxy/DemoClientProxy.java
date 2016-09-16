@@ -1,4 +1,4 @@
-package com.zhw.ms.demo.hystrix;
+package com.zhw.ms.demo.proxy;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;

@@ -1,4 +1,4 @@
-package com.zhw.ms.demo.hystrix;
+package com.zhw.ms.demo.proxy;
 
 import com.zhw.ms.demo.client.DemoClient;
 import org.junit.Assert;
