@@ -21,6 +21,14 @@ public class Result<T> implements Serializable {
      */
     private T data;
 
+    public Result() {
+    }
+
+    public Result(ResultEnum resultEnum) {
+        setRetCode(resultEnum.getCode());
+        setRetMsg(resultEnum.getMessage());
+    }
+
     public int getRetCode() {
         return retCode;
     }

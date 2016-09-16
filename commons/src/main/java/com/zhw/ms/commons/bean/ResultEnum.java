@@ -11,7 +11,8 @@ public enum ResultEnum {
     ERROR_ARGUMENT(-3, "参数错误"),
     ACCESS_TIMEOUT(-4, "访问超时"),
     SYSTEM_ERROR(-5, "系统出错，请联系客服"),
-    DATA_SOURCE_ERROR(-6, "数据源注解未设置");
+    DATA_SOURCE_ERROR(-6, "数据源注解未设置"),
+    CALL_TIMEOUT(-7, "服务调用超时");
 
     public int code;
     public String message;

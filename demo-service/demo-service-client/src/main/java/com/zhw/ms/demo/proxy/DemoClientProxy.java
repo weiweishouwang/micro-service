@@ -3,6 +3,7 @@ package com.zhw.ms.demo.proxy;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.netflix.hystrix.contrib.javanica.command.AsyncResult;
+import com.zhw.ms.base.proxy.BaseClientProxy;
 import com.zhw.ms.commons.bean.Result;
 import com.zhw.ms.demo.api.DemoAPI;
 import com.zhw.ms.demo.client.DemoClient;
@@ -15,10 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.concurrent.Future;
 
 @Service
-public class DemoClientProxy implements DemoAPI {
-    private static final Logger logger = LoggerFactory
-            .getLogger(DemoClientProxy.class);
-
+public class DemoClientProxy extends BaseClientProxy implements DemoAPI {
     @Autowired
     private DemoClient demoClient;
 
@@ -30,7 +28,6 @@ public class DemoClientProxy implements DemoAPI {
     }
 
     public Result<Object> getAdminFallback(Integer id, Throwable t) {
-        logger.error(t.getMessage(), t);
-        return null;
+        return backFallback(t);
     }
 }
