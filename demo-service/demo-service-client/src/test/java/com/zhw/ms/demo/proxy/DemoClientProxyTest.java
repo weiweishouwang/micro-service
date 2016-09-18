@@ -1,5 +1,6 @@
 package com.zhw.ms.demo.proxy;
 
+import com.zhw.ms.commons.bean.Result;
 import com.zhw.ms.demo.client.DemoClient;
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 /**
  * Created by hongweizou on 16/9/12.
@@ -21,5 +25,11 @@ public class DemoClientProxyTest {
     @Test
     public void test01() {
         Assert.assertTrue(demoClientProxy.getAdmin(1).isSuccess());
+    }
+
+    @Test
+    public void test02() throws ExecutionException, InterruptedException {
+        Future<Result<Object>> future = demoClientProxy.getAdminAsync(1);
+        Assert.assertTrue(future.get().isSuccess());
     }
 }

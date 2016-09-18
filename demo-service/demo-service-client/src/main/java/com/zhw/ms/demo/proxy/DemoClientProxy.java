@@ -27,6 +27,16 @@ public class DemoClientProxy extends BaseClientProxy implements DemoAPI {
         return demoClient.getAdmin(id);
     }
 
+    @HystrixCommand(fallbackMethod = "getAdminFallback")
+    public Future<Result<Object>> getAdminAsync(Integer id) {
+        return new AsyncResult<Result<Object>>() {
+            @Override
+            public Result<Object> invoke() {
+                return demoClient.getAdmin(id);
+            }
+        };
+    }
+
     public Result<Object> getAdminFallback(Integer id, Throwable t) {
         return backFallback(t);
     }
