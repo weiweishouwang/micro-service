@@ -19,6 +19,7 @@
         <commons-lang3.version>3.4</commons-lang3.version>
         <mybatis-spring-boot.version>1.1.1</mybatis-spring-boot.version>
         <mysql-connector.version>5.1.39</mysql-connector.version>
+        <docker-maven-plugin.version>0.4.13</docker-maven-plugin.version>
     </properties>
 
     <modules>
@@ -41,6 +42,16 @@
                         <source>${java.version}</source>
                         <target>${java.version}</target>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>${docker-maven-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
