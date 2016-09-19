@@ -16,10 +16,12 @@
     <dependency>
         <groupId>com.zhw.ms</groupId>
         <artifactId>demo-service-api</artifactId>
+        <version>${micro-service.version}</version>
     </dependency>
     <dependency>
         <groupId>com.zhw.ms</groupId>
         <artifactId>base-service-client</artifactId>
+        <version>${micro-service.version}</version>
     </dependency>
     <dependency>
         <groupId>org.springframework.boot</groupId>
