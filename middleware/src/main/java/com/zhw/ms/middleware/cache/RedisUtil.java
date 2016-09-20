@@ -1,7 +1,7 @@
-package com.zhw.ms.middleware.cache;/*
-package com.zhw.ms.commons.cache;
+package com.zhw.ms.middleware.cache;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.zhw.ms.commons.cache.KeyUtil;
 import com.zhw.ms.commons.spring.SpringUtil;
 import com.zhw.ms.commons.utils.JsonUtil;
 import org.apache.commons.lang3.StringUtils;
@@ -13,11 +13,9 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Supplier;
 
-*/
 /**
  * Created by ZHW on 2015/7/16.
- *//*
-
+ */
 public class RedisUtil {
 
     private static StringRedisTemplate template;
@@ -28,157 +26,133 @@ public class RedisUtil {
         }
     }
 
-    */
-/**
+    /**
      * 获取list
      *
      * @param listName key
      * @return BoundListOperations bound list operations
-     *//*
-
+     */
     public static BoundListOperations<String, String> list(String listName) {
         return template.boundListOps(listName);
     }
 
-    */
-/**
+    /**
      * 获取hash
      *
      * @param hashName hash name
      * @return BoundHashOperations bound hash operations
-     *//*
-
+     */
     public static BoundHashOperations<String, String, String> hash(String hashName) {
         return template.boundHashOps(hashName);
     }
 
-    */
-/**
+    /**
      * 设置value值
      *
      * @param hashName hash name
      * @param key      key
      * @param value    value
      * @param timeout  超时时间
-     *//*
-
+     */
     public static void putHash(String hashName, String key, String value, long timeout) {
         BoundHashOperations<String, String, String> operations = template.boundHashOps(hashName);
         operations.put(key, value);
         operations.expire(timeout, TimeUnit.SECONDS);
     }
 
-    */
-/**
+    /**
      * 获取value值
      *
      * @param hashName hash name
      * @param key      key
      * @return value hash
-     *//*
-
+     */
     public static String getHash(String hashName, String key) {
         return (String) template.boundHashOps(hashName).get(key);
     }
 
-    */
-/**
+    /**
      * 获取set
      *
      * @param setName key
      * @return BoundSetOperations bound set operations
-     *//*
-
+     */
     public static BoundSetOperations<String, String> set(String setName) {
         return template.boundSetOps(setName);
     }
 
-    */
-/**
+    /**
      * 设置value值
      *
      * @param setName key
      * @param value   value
      * @param timeout 超时时间
-     *//*
-
+     */
     public static void addSet(String setName, String value, long timeout) {
         BoundSetOperations<String, String> operations = template.boundSetOps(setName);
         operations.add(value);
         operations.expire(timeout, TimeUnit.SECONDS);
     }
 
-    */
-/**
+    /**
      * 获取value值
      *
      * @param key key
      * @return value string
-     *//*
-
+     */
     public static String popSet(String key) {
         return template.boundSetOps(key).pop();
     }
 
-    */
-/**
+    /**
      * 获取zset
      *
      * @param zsetName key
      * @return BoundZSetOperations bound z set operations
-     *//*
-
+     */
     public static BoundZSetOperations<String, String> zset(String zsetName) {
         return template.boundZSetOps(zsetName);
     }
 
-    */
-/**
+    /**
      * 获取value
      *
      * @param key key
      * @return BoundValueOperations bound value operations
-     *//*
-
+     */
     public static BoundValueOperations<String, String> value(String key) {
         return template.boundValueOps(key);
     }
 
-    */
-/**
+    /**
      * 设置value值
      *
      * @param key     key
      * @param value   value
      * @param timeout 超时时间
-     *//*
-
+     */
     public static void setValue(String key, String value, long timeout) {
         BoundValueOperations<String, String> operations = template.boundValueOps(key);
         operations.set(value);
         operations.expire(timeout, TimeUnit.SECONDS);
     }
 
-    */
-/**
+    /**
      * 获取value值
      *
      * @param key key
      * @return value value
-     *//*
-
+     */
     public static String getValue(String key) {
         return template.boundValueOps(key).get();
     }
 
-    */
-/**
+    /**
      * 分布式锁
      *
      * @param key     key
      * @param timeout 超时时间
-     *//*
-
+     */
     public static void setIfAbsent(String key, long timeout) {
         BoundValueOperations<String, String> operations = template.boundValueOps(key);
         operations.setIfAbsent("1");
@@ -186,38 +160,32 @@ public class RedisUtil {
 
     }
 
-    */
-/**
+    /**
      * 分布式锁
      *
      * @param key key
-     *//*
-
+     */
     public static void setIfAbsent(String key) {
         BoundValueOperations<String, String> operations = template.boundValueOps(key);
         operations.setIfAbsent("1");
     }
 
-    */
-/**
+    /**
      * 删除
      *
      * @param key key
-     *//*
-
+     */
     public static void remove(String key) {
         template.delete(key);
     }
 
-    */
-/**
+    /**
      * 初始化原子加变量
      *
      * @param key   key
      * @param value value
      * @return 是否初始化 boolean
-     *//*
-
+     */
     public static boolean initIfBlank(String key, long value) {
         //初始化key的值
         if (StringUtils.isBlank(value(key).get(0, -1))) {
@@ -228,16 +196,14 @@ public class RedisUtil {
         return false;
     }
 
-    */
-/**
+    /**
      * Execute string.
      *
      * @param scripte the scripte
      * @param key     the key
      * @param args    the args
      * @return the string
-     *//*
-
+     */
     public static String execute(String scripte, List<String> key, Object... args) {
 
         Object[] strArgs = new String[args.length];
@@ -257,24 +223,21 @@ public class RedisUtil {
 
     }
 
-    */
-/**
+    /**
      * 比较当前值增加后是否超过指定最大值，如果没超过最大值则增加，否则不增加     *
      *
      * @param key      key
      * @param addValue 增加的值
      * @param maxValue 最大值
      * @return 0 ：表示增加成功，小于0表示还缺多少
-     *//*
-
+     */
     public static Integer compareAndAdd(String key, Integer addValue, Integer maxValue) {
 
         return compareAndAdd(key, addValue, maxValue, 0L);
     }
 
 
-    */
-/**
+    /**
      * 比较当前值增加后是否超过指定最大值，如果没超过最大值则增加，否则不增加
      *
      * @param key          key
@@ -282,8 +245,7 @@ public class RedisUtil {
      * @param maxValue     最大值
      * @param expireSecond 超时秒数
      * @return 0 ：表示增加成功，小于0表示还缺多少
-     *//*
-
+     */
     public static Integer compareAndAdd(String key, Integer addValue, Integer maxValue, Long expireSecond) {
         if (key == null || key.isEmpty()) {
             throw new IllegalArgumentException("key不能为空");
@@ -311,8 +273,7 @@ public class RedisUtil {
                 "end;";
         return Integer.parseInt(RedisUtil.execute(script, Arrays.asList(key), "" + expireSecond, addValue, maxValue));
     }
-    */
-/**
+    /**
      * 比较当前值增加后是否超过指定最大值，如果没超过最大值则增加，否则不增加
      *
      * @param key          key
@@ -321,8 +282,7 @@ public class RedisUtil {
      *                     @param  leftMinValue 最少需要剩余的只
      * @param expireSecond 超时秒数
      * @return 0 ：表示增加成功;小于0表示还缺多少 ;大于零是表示失败,值表示多多少(比leftMinValue少)
-     *//*
-
+     */
     public static Integer compareAndAdd(String key, Integer addValue, Integer maxValue,Integer leftMinValue, Long expireSecond) {
         if (key == null || key.isEmpty()) {
             throw new IllegalArgumentException("key不能为空");
@@ -353,16 +313,14 @@ public class RedisUtil {
                 "end;";
         return Integer.parseInt(RedisUtil.execute(script, Arrays.asList(key), "" + expireSecond, addValue, maxValue,leftMinValue));
     }
-    */
-/**
+    /**
      * 原子操作设置值并且设置超时时间
      *
      * @param key          key
      * @param value        值
      * @param expireSecond 超时秒数
      * @return 0 ：表示增加成功，小于0表示还缺多少
-     *//*
-
+     */
     public static boolean setValueAndExpire(String key, String value, Long expireSecond) {
         if (key == null || key.isEmpty()) {
             throw new IllegalArgumentException("key不能为空");
@@ -381,8 +339,7 @@ public class RedisUtil {
         return result.equals("1");
     }
 
-    */
-/**
+    /**
      * 如果值不存在则设置值，否知直接从缓存中读取
      *
      * @param key      the key
@@ -390,8 +347,7 @@ public class RedisUtil {
      * @param timeOut  the 超时时间
      * @param timeUnit the 超时时间单位
      * @return 返回当前key的值。
-     *//*
-
+     */
     public static <T> T setIfNotExists(String key, Supplier<T> supplier, Long timeOut, TimeUnit timeUnit, Class clazz) {
         T resultObj = null;
         String result = getValue(key);
@@ -411,8 +367,7 @@ public class RedisUtil {
     }
 
 
-    */
-/**
+    /**
      * 如果值不存在则设置值，否知直接从缓存中读取
      *
      * @param key      the key
@@ -420,8 +375,7 @@ public class RedisUtil {
      * @param timeOut  the 超时时间
      * @param timeUnit the 超时时间单位
      * @return 返回当前key的值。
-     *//*
-
+     */
     public static <T> List<T> setIfNotExists(String key, Supplier<List<T>> supplier, Long timeOut, TimeUnit timeUnit, TypeReference<List<T>> t) {
         List<T> resultObj = null;
         String result = getValue(key);
@@ -440,31 +394,26 @@ public class RedisUtil {
         return resultObj;
     }
 
-    */
-/**
+    /**
      * 判断可以是否存在
      *
      * @param key redis key
      * @return true 存在，false不存在
-     *//*
-
+     */
     public static boolean exists(String key) {
         return Boolean.TRUE.equals(template.hasKey(key));
     }
 
-    */
-/**
+    /**
      * 获取每个表的自增ID
      *
      * @param db    数据库名
      * @param table 表名
      * @return 自增的ID
-     *//*
-
+     */
     public static long getID(String db, String table) {
         String key = KeyUtil.getKey("autoIncrementID", db, table);
         return value(key).increment(1);
     }
 
 }
-*/

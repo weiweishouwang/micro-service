@@ -1,5 +1,4 @@
-package com.zhw.ms.middleware.config;/*
-package com.zhw.ms.commons.config;
+package com.zhw.ms.middleware.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
@@ -9,13 +8,10 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
 
-*/
 /**
  * Created by Administrator on 2015/12/29 0029.
- *//*
-
+ */
 @Configuration
 public class RedisConfig {
     @Autowired
@@ -37,7 +33,10 @@ public class RedisConfig {
     public RedisTemplate redisTemplate() {
         StringRedisTemplate template = new StringRedisTemplate();
         template.setConnectionFactory(redisConnectionFactory());
+        //template.setKeySerializer(new StringRedisSerializer());
+        //template.setHashKeySerializer(new StringRedisSerializer());
+        //template.setValueSerializer(new StringRedisSerializer());
+        //template.setHashValueSerializer(new StringRedisSerializer());
         return template;
     }
 }
-*/

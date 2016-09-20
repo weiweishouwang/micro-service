@@ -2,6 +2,7 @@ package com.zhw.ms.middleware;
 
 import com.zhw.ms.commons.spring.SpringUtil;
 import com.zhw.ms.commons.utils.DateUtil;
+import com.zhw.ms.middleware.cache.RedisUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -21,6 +22,8 @@ public class BasicTest {
 
     @Test
     public void test01() throws InterruptedException {
+        RedisUtil.setValue("test", "test", 1);
+        System.out.println(RedisUtil.getValue("test"));
         System.out.println(DateUtil.format(new Date(), DateUtil.YYYYMMDDHHMMSSMS));
     }
 
