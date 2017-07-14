@@ -34,6 +34,7 @@
         <module>base-service</module>
         <module>middleware</module>
         <module>monitor-service</module>
+        <module>tools</module>
     </modules>
 
     <build>

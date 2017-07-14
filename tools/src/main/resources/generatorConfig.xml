@@ -1,0 +1,28 @@
+<span style="font-size:14px;"><?xml version="1.0" encoding="UTF-8" ?>
+    <!DOCTYPE generatorConfiguration PUBLIC
+    "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+    "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+    <generatorConfiguration>
+        <!--<classPathEntry
+                location="E:\Eclipse\Repository\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar"/>-->
+        <context id="context1" targetRuntime="MyBatis3">
+            <commentGenerator>
+                <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+                <property name="suppressAllComments" value="true"/>
+                <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+            </commentGenerator>
+            <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                            connectionURL="jdbc:mysql://139.224.62.74:3306/demo?useUnicode=true&amp;characterEncoding=UTF-8"
+                            userId="root" password="root"/>
+            <javaModelGenerator targetPackage="org.share.domain.tree.entity"
+                                targetProject="../java/com.zhw.ms.entity"/>
+            <sqlMapGenerator targetPackage="org.share.domain.tree.mapper"
+                             targetProject="../java/com.zhw.ms.persistence"/>
+            <javaClientGenerator targetPackage="org.share.domain.tree.mapper"
+                                 targetProject="../java/com.zhw.ms.persistence" type="XMLMAPPER"/>
+            <!-- shema 数据库 tableName表明 -->
+            <table schema="admin" tableName="Admin"/>
+
+        </context>
+    </generatorConfiguration>
+</span>
