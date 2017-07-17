@@ -1,21 +1,36 @@
 package com.zhw.ms.demo.entity;
 
-import com.zhw.ms.commons.entity.Entity;
+import java.util.Date;
 
-public class Admin extends Entity {
+public class Admin {
+    private Long id;
 
-    public String account;
+    private String account;
 
-    public String passwd;
+    private String passwd;
 
-    public String name;
+    private String name;
+
+    private Integer version;
+
+    private Date created;
+
+    private Date updated;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getAccount() {
         return account;
     }
 
     public void setAccount(String account) {
-        this.account = account;
+        this.account = account == null ? null : account.trim();
     }
 
     public String getPasswd() {
@@ -23,7 +38,7 @@ public class Admin extends Entity {
     }
 
     public void setPasswd(String passwd) {
-        this.passwd = passwd;
+        this.passwd = passwd == null ? null : passwd.trim();
     }
 
     public String getName() {
@@ -31,6 +46,30 @@ public class Admin extends Entity {
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.name = name == null ? null : name.trim();
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 }
