@@ -24,12 +24,12 @@ public class DemoClientProxyTest {
 
     @Test
     public void test01() {
-        Assert.assertTrue(demoClientProxy.getAdmin(1).isSuccess());
+        Assert.assertTrue(demoClientProxy.getAdmin(1L).isSuccess());
     }
 
     @Test
     public void test02() throws ExecutionException, InterruptedException {
-        Future<Result<Object>> future = demoClientProxy.getAdminAsync(1);
+        Future<Result<Object>> future = demoClientProxy.getAdminAsync(1L);
         Assert.assertTrue(future.get().isSuccess());
     }
 }

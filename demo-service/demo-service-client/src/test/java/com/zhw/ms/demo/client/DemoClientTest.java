@@ -22,6 +22,6 @@ public class DemoClientTest {
 
     @Test
     public void test01() {
-        Assert.assertTrue(demoClient.getAdmin(1).isSuccess());
+        Assert.assertTrue(demoClient.getAdmin(1L).isSuccess());
     }
 }

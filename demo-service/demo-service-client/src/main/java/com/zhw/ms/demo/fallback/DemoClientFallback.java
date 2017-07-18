@@ -17,7 +17,7 @@ public class DemoClientFallback implements DemoClient {
             .getLogger(DemoClientFallback.class);
 
     @Override
-    public Result<Object> getAdmin(Integer id) {
+    public Result<Object> getAdmin(Long id) {
         return null;
     }
 
