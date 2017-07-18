@@ -15,7 +15,7 @@ public class DemoService {
     private AdminMapper adminMapper;
 
     @SlaverDataSource
-    public Admin getAdmin(Integer id) {
+    public Admin getAdmin(Long id) {
         return adminMapper.selectByPrimaryKey(id);
     }
 

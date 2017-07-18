@@ -19,6 +19,6 @@ public class DemoRestTest {
 
     @Test
     public void test01() {
-        Assert.assertTrue(demoRest.getAdmin(1).isSuccess());
+        Assert.assertTrue(demoRest.getAdmin(1L).isSuccess());
     }
 }

@@ -23,7 +23,7 @@ public class DemoRest implements DemoAPI {
     private DemoService demoService;
 
     @Override
-    public Result<Object> getAdmin(@RequestParam("id") Integer id) {
+    public Result<Object> getAdmin(@RequestParam("id") Long id) {
         logger.info("start");
         Result<Object> result = new Result<>();
         result.setRetCode(ResultEnum.SUCCESS.getCode());

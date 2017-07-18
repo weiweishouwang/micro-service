@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface DemoAPI {
 
     @RequestMapping(value = "/getAdmin", method = RequestMethod.GET)
-    public Result<Object> getAdmin(@RequestParam("id") Integer id) ;
+    public Result<Object> getAdmin(@RequestParam("id") Long id) ;
 
 }

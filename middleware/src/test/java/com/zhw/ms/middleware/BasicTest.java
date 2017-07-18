@@ -1,15 +1,11 @@
 package com.zhw.ms.middleware;
 
-import com.zhw.ms.commons.spring.SpringUtil;
 import com.zhw.ms.commons.utils.DateUtil;
 import com.zhw.ms.middleware.cache.RedisUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
 
