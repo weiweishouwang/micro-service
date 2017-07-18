@@ -37,7 +37,7 @@ public class DemoClientProxy extends BaseClientProxy implements DemoAPI {
         };
     }
 
-    public Result<Object> getAdminFallback(Integer id, Throwable t) {
+    public Result<Object> getAdminFallback(Long id, Throwable t) {
         return backFallback(t);
     }
 }
