@@ -1,29 +1,14 @@
 package com.zhw.ms.demo.entity;
 
-import java.util.Date;
+import com.zhw.ms.commons.entity.Entity;
 
-public class Admin {
-    private Long id;
+public class Admin extends Entity {
 
     private String account;
 
     private String passwd;
 
     private String name;
-
-    private Integer version;
-
-    private Date created;
-
-    private Date updated;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getAccount() {
         return account;
@@ -49,27 +34,4 @@ public class Admin {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-
-    public Date getCreated() {
-        return created;
-    }
-
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
-    }
 }

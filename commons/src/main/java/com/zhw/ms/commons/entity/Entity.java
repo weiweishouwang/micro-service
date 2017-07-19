@@ -1,6 +1,7 @@
 package com.zhw.ms.commons.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 基础实例类.
@@ -9,8 +10,8 @@ import java.io.Serializable;
 public class Entity implements Serializable {
     public Long id;
     public Integer version;
-    public Long created;
-    public Long updated;
+    public Date created;
+    public Date updated;
 
     public Long getId() {
         return id;
@@ -28,19 +29,19 @@ public class Entity implements Serializable {
         this.version = version;
     }
 
-    public Long getCreated() {
+    public Date getCreated() {
         return created;
     }
 
-    public void setCreated(Long created) {
+    public void setCreated(Date created) {
         this.created = created;
     }
 
-    public Long getUpdated() {
+    public Date getUpdated() {
         return updated;
     }
 
-    public void setUpdated(Long updated) {
+    public void setUpdated(Date updated) {
         this.updated = updated;
     }
 }
