@@ -31,11 +31,7 @@ public class AnalyticsDao {
     public void insert(RequestLog requestLog) {
         if (requestLog != null) {
             String tableName = getTableName(System.currentTimeMillis());
-            try {
-                insetRecord(requestLog, tableName);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            insetRecord(requestLog, tableName);
         }
     }
 

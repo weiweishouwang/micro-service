@@ -91,12 +91,12 @@ public class AccessLogFilter implements Filter {
             analyticRequestLog.status = bufferedResponse.getStatus();
             analyticRequestLog.method = bufferedRequest.getMethod();
             analyticRequestLog.userAgent = bufferedRequest.getHeader("user-agent");
-            analyticRequestLog.reqId = bufferedRequest.getHeader("reqid");
+            analyticRequestLog.reqId = bufferedRequest.getHeader("X-B3-TraceId");
             analyticRequestLog.ver = bufferedRequest.getHeader("ver");
             analyticRequestLog.queryString = bufferedRequest.getQueryString();
             analyticRequestLog.contentType = bufferedRequest.getContentType();
         } catch (Exception e) {
-            logger.info("Exception:" + e.getMessage());
+            logger.warn("Exception:" + e.getMessage());
             e.printStackTrace();
         }
         return analyticRequestLog;

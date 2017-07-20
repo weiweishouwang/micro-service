@@ -33,7 +33,7 @@ public class MysqlAnalytics implements Analytics {
                         requestLog.responseBody = requestLog.responseBody.substring(0, MAX_LENGTH);
                     analyticsDao.insert(requestLog);
                 } catch (Exception e) {
-                    logger.info("Exception: " + e.getMessage());
+                    logger.warn("Exception: " + e.getMessage());
                 }
             }
         });
