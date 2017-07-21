@@ -77,9 +77,9 @@ public class UncaughtExceptionHandler extends ResponseEntityExceptionHandler {
 
         String queryString = toQueryString(request.getParameterMap());
 
-        String msg = serviceName + " " + request.getDescription(true) + " queryString: " + "\n";
+        String msg = serviceName + " " + request.getDescription(true);
         System.err.println(msg);
-        System.err.println(queryString);
+        System.err.println("queryString: " + queryString);
         System.err.println(headers);
         logger.error(e.getMessage(), e);
 
