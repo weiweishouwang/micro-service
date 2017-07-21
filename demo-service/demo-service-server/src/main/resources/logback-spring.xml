@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-	<!--<include resource="org/springframework/boot/logging/logback/base.xml"/>-->
-	<include resource="org/springframework/boot/logging/logback/defaults.xml"/>
-	<jmxConfigurator/>
+	<include resource="org/springframework/boot/logging/logback/base.xml"/>
+	<!--<include resource="org/springframework/boot/logging/logback/defaults.xml"/>-->
+	<!--<jmxConfigurator/>
 
 	<springProperty scope="context" name="springAppName" source="spring.application.name"/>
-	<!-- Example for logging into the build folder of your project -->
+	&lt;!&ndash; Example for logging into the build folder of your project &ndash;&gt;
 	<property name="LOG_FILE" value="${BUILD_FOLDER:-build}/${springAppName}"/>​
 
 	<property name="CONSOLE_LOG_PATTERN"
-			  value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([${springAppName:-},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]){yellow} %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+			  value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([${springAppName:-},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]){yellow} %clr(${PID:- }){magenta} %clr(-&#45;&#45;){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
 
-	<!-- Appenderanalytics log to console -->
+	&lt;!&ndash; Appenderanalytics log to console &ndash;&gt;
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
 		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-			<!-- Minimum logging level to be presented in the console logs-->
+			&lt;!&ndash; Minimum logging level to be presented in the console logs&ndash;&gt;
 			<level>INFO</level>
 		</filter>
 		<encoder>
@@ -23,7 +23,7 @@
 		</encoder>
 	</appender>
 
-	<!-- Appenderanalytics log to file -->​
+	&lt;!&ndash; Appenderanalytics log to file &ndash;&gt;​
 	<appender name="flatfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<file>${LOG_FILE}</file>
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
@@ -38,7 +38,7 @@
 	​
 	<appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
 		<destination>121.42.166.189:4560</destination>
-		<!-- encoder is required -->
+		&lt;!&ndash; encoder is required &ndash;&gt;
 		<encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
 			<providers>
 				<timestamp>
@@ -66,6 +66,6 @@
 	<root level="INFO">
 		<appender-ref ref="console"/>
 		<appender-ref ref="logstash"/>
-		<!--<appender-ref ref="flatfile"/>-->
-	</root>
+		&lt;!&ndash;<appender-ref ref="flatfile"/>&ndash;&gt;
+	</root>-->
 </configuration>

@@ -47,7 +47,7 @@ public class SlackNotification implements Notification {
     }
 
     public static void error(String message) {
-        Notification notification = SpringUtil.getBean(SlackNotification.class);
+        Notification notification = SpringUtil.getBean("slackNotification");
         notification.notify(LogLevel.ERROR, message);
     }
 

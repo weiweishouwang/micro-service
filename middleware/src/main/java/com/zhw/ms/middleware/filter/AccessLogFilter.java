@@ -42,6 +42,12 @@ public class AccessLogFilter implements Filter {
     @Override
     public void init(FilterConfig fc) throws ServletException {
         appCtx = WebApplicationContextUtils.getWebApplicationContext(fc.getServletContext());
+        skipRestUris.add("/configprops");
+        skipRestUris.add("/info");
+        skipRestUris.add("/health");
+        skipRestUris.add("/metrics");
+        skipRestUris.add("/git-build-revision");
+        skipRestUris.add("/favicon.ico");
     }
 
     @Override
