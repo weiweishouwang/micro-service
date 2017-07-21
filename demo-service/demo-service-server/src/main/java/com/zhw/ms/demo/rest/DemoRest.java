@@ -32,4 +32,9 @@ public class DemoRest implements DemoAPI {
         return result;
     }
 
+    @Override
+    public Result<Object> throwException() throws Exception {
+        throw new Exception("出错了");
+    }
+
 }

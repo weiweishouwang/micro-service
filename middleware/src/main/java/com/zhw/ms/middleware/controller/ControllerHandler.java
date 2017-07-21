@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by Administrator on 2016/5/25 0025.
  */
-@ControllerAdvice
+//@ControllerAdvice
 public class ControllerHandler {
     private static final Logger logger = LoggerFactory
             .getLogger(ControllerHandler.class);
@@ -29,7 +29,7 @@ public class ControllerHandler {
      * @param request
      * @return
      */
-    @ExceptionHandler(Throwable.class)
+    //@ExceptionHandler(Throwable.class)
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
     public Object handleException(Throwable exception, HttpServletRequest request) {
