@@ -96,7 +96,7 @@ public class AccessLogFilter implements Filter {
             analyticRequestLog.queryString = bufferedRequest.getQueryString();
             analyticRequestLog.contentType = bufferedRequest.getContentType();
         } catch (Exception e) {
-            logger.warn("Exception:" + e.getMessage());
+            logger.error("Exception:" + e.getMessage());
             e.printStackTrace();
         }
         return analyticRequestLog;
