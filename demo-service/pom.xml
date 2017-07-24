@@ -101,7 +101,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>${docker-maven-plugin.version}</version>
                 <configuration>
-                    <imageName>registry-internal.cn-hangzhou.aliyuncs.com/zhw_develop/${project.artifactId}</imageName>
+                    <imageName>registry-internal.cn-hangzhou.aliyuncs.com/zhw_develop/demo-service-server</imageName>
                     <baseImage>java:8</baseImage>
                     <volumes>
                         <volume>/tmp</volume>
