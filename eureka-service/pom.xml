@@ -40,6 +40,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -49,11 +50,13 @@
                     </delimiters>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
+                <version>${docker-maven-plugin.version}</version>
                 <configuration>
-                    <imageName>registry.cn-hangzhou.aliyuncs.com/kaishi/${project.artifactId}</imageName>
+                    <imageName>registry-internal.cn-hangzhou.aliyuncs.com/zhw_develop/${project.artifactId}</imageName>
                     <baseImage>java:8</baseImage>
                     <volumes>
                         <volume>/tmp</volume>
@@ -62,7 +65,7 @@
                     <runs>
                         <run>touch /${project.artifactId}.jar</run>
                     </runs>
-                    <entryPoint>["java","-Xms1g","-Xmx2g","-Djava.security.egd=file:/dev/./urandom","-jar","/${project.artifactId}.jar"]</entryPoint>
+                    <entryPoint>["java","-Xms256m","-Xmx256m","-Djava.security.egd=file:/dev/./urandom","-jar","/${project.artifactId}.jar"]</entryPoint>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -72,6 +75,7 @@
                     </resources>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
