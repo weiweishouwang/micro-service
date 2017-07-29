@@ -45,13 +45,13 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <dependencies>
+                <!--<dependencies>
                     <dependency>
                         <groupId>org.springframework</groupId>
                         <artifactId>springloaded</artifactId>
-                        <!--<version>${spring-loaded.version}</version>-->
+                        &lt;!&ndash;<version>${spring-loaded.version}</version>&ndash;&gt;
                     </dependency>
-                </dependencies>
+                </dependencies>-->
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
