@@ -70,7 +70,7 @@
                 </configuration>
             </plugin>
 
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
@@ -78,7 +78,7 @@
                     <aggregate>true</aggregate>
                     <additionalparam>-Xdoclint:none</additionalparam>
                 </configuration>
-            </plugin>
+            </plugin>-->
 
             <plugin>
                 <groupId>org.springframework.boot</groupId>
