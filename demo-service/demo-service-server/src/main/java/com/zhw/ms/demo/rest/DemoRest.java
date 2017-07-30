@@ -2,8 +2,10 @@ package com.zhw.ms.demo.rest;
 
 import com.zhw.ms.commons.bean.Result;
 import com.zhw.ms.commons.bean.ResultEnum;
+import com.zhw.ms.commons.utils.JsonUtil;
 import com.zhw.ms.demo.api.DemoAPI;
 import com.zhw.ms.demo.service.DemoService;
+import com.zhw.ms.middleware.cache.RedisUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,9 @@ public class DemoRest implements DemoAPI {
         result.setRetCode(ResultEnum.SUCCESS.getCode());
         result.setRetMsg(ResultEnum.SUCCESS.getMessage());
         result.setData(demoService.getAdmin(id));
+
+        RedisUtil.value("admin." + id).set(JsonUtil.entity2Json(result.getData()));
+
         return result;
     }
 
